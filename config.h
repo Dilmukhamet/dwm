@@ -10,9 +10,9 @@ static const char *fonts[]          = { "White Rabbit:size=16" };
 static const char dmenufont[]       = "White Rabbit:size=18";
 static const char col_gray1[]       = "#2e2f2f";
 static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#b80000";
+static const char col_gray3[]       = "#97961a";
 static const char col_gray4[]       = "#000000";
-static const char col_cyan[]        = "#860000";
+static const char col_cyan[]        = "#97961a";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -61,7 +61,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browser[]  = { "brave", NULL };
-static const char *virtmanager[] = {"virt-manager", NULL};
+//static const char *virtmanager[] = {"virt-manager", NULL};
+static const char *virtualbox[] = {"virtualbox", NULL};
 static const char *zathura[] = {"zathura", NULL};
 static const char *pavucontrol[] = {"pavucontrol", NULL};
 static const char *passmenu[] = {"passmenu",  "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4,NULL};
@@ -73,7 +74,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = passmenu } }, 
 	{ MODKEY,                       XK_w,      spawn,          {.v = browser } },
 	{ MODKEY,   	                XK_Return, spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_v,      spawn,          {.v = virtmanager}  },
+    { MODKEY,                       XK_v,      spawn,          {.v = virtualbox}  },
+    { 0,                            XK_Print,  spawn,          SHCMD("/home/dil/suckless/dwm/screenshot.sh") },
+    { ShiftMask,                    XK_Print,  spawn,          SHCMD("/home/dil/suckless/dwm/screenshotsel.sh") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
