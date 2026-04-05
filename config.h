@@ -33,6 +33,7 @@ static const Rule rules[] = {
     {"Gimp", NULL, NULL, 0, 0, -1},
     {"Brave", NULL, NULL, 1 << 1, 0, -1},
     {"Virt-manager", NULL, NULL, 1 << 7, 0, -1},
+    {"Obsidian", NULL, NULL, 1 << 8, 0, -1},
 };
 
 /* layout(s) */
@@ -72,11 +73,12 @@ static const char *dmenucmd[] = {
     "-nf",       col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL};
 static const char *termcmd[] = {"alacritty", NULL};
 static const char *browser[] = {"brave", NULL};
-// static const char *virtmanager[] = {"virt-manager", NULL};
-static const char *virtualbox[] = {"virtualbox", NULL};
+static const char *obsidian[] = {"obsidian", NULL};
+static const char *virtmanager[] = {"virt-manager", NULL};
+// static const char *virtualbox[] = {"virtualbox", NULL};
 static const char *zathura[] = {"zathura", NULL};
 static const char *pavucontrol[] = {"pavucontrol", NULL};
-static const char *telegram[] = {"telegram", NULL};
+static const char *telegram[] = {"Telegram", NULL};
 static const char *passmenu[] = {
     "passmenu", "-m",      dmenumon, "-fn",    dmenufont, "-nb",     col_gray1,
     "-nf",      col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL};
@@ -87,9 +89,10 @@ static Key keys[] = {
     {MODKEY, XK_d, spawn, {.v = dmenucmd}},
     {MODKEY | ShiftMask, XK_p, spawn, {.v = passmenu}},
     {MODKEY | ShiftMask, XK_t, spawn, {.v = telegram}},
+    {MODKEY | ShiftMask, XK_o, spawn, {.v = obsidian}},
     {MODKEY, XK_w, spawn, {.v = browser}},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
-    {MODKEY, XK_v, spawn, {.v = virtualbox}},
+    {MODKEY, XK_v, spawn, {.v = virtmanager}},
     //{0, XK_Print, spawn, SHCMD("/home/dil/suckless/dwm/screenshot.sh")},
     {0, XK_Print, spawn, SHCMD("/home/dil/suckless/dwm/maim.sh")},
     //{ShiftMask, XK_Print,
@@ -131,7 +134,8 @@ static Key keys[] = {
     //{ 0, XF86XK_AudioMute,                     spawn,          SHCMD("amixer
     // set Master toggle")},
     {0, XF86XK_AudioMute, spawn, SHCMD("pamixer -t")},
-    {0, XF86XK_AudioMicMute, spawn, SHCMD("pamixer -i 10")},
+    //{0, XF86XK_AudioMicMute, spawn, SHCMD("pamixer -i 10")},
+    {0, XF86XK_AudioRaiseVolume, spawn, SHCMD("pamixer -i 10")},
     //	{ 0, XF86XK_AudioLowerVolume,              spawn,          SHCMD("amixer
     // set Master 10%-") },
     {0, XF86XK_AudioLowerVolume, spawn, SHCMD("pamixer -d 10")},
