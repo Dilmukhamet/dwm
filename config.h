@@ -1,18 +1,38 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 5; /* border pixel of windows */
-static const unsigned int gappx = 7;    /* gaps between windows */
-static const unsigned int snap = 42;    /* snap pixel */
-static const int showbar = 1;           /* 0 means no bar */
-static const int topbar = 0;            /* 0 means bottom bar */
-static const char *fonts[] = {"White Rabbit:size=18"};
-static const char dmenufont[] = "White Rabbit:size=18";
-static const char col_gray1[] = "#2e2f2f";
-static const char col_gray2[] = "#444444";
-static const char col_gray3[] = "#ff3300";
-static const char col_gray4[] = "#000000";
-static const char col_cyan[] = "#ff3300";
+// static const unsigned int borderpx = 5; /* border pixel of windows */
+// static const unsigned int gappx = 7;    /* gaps between windows */
+// static const unsigned int snap = 42;    /* snap pixel */
+// static const int showbar = 1;           /* 0 means no bar */
+// static const int topbar = 0;            /* 0 means bottom bar */
+// static const char *fonts[] = {"White Rabbit:size=18"};
+// static const char dmenufont[] = "White Rabbit:size=18";
+// static const char col_gray1[] = "#2e2f2f";
+// static const char col_gray2[] = "#444444";
+// static const char col_gray3[] = "#ff3300";
+// static const char col_gray4[] = "#000000";
+// static const char col_cyan[] = "#ff3300";
+// static const char *colors[][3] = {
+//     /*               fg         bg         border   */
+//     [SchemeNorm] = {col_gray3, col_gray1, col_gray2},
+//     [SchemeSel] = {col_gray4, col_cyan, col_cyan},
+// };
+static const unsigned int borderpx = 5;
+static const unsigned int gappx = 7;
+static const unsigned int snap = 42;
+static const int showbar = 1;
+static const int topbar = 0;
+
+static const char *fonts[] = {"DejaVu Sans Mono:size=16"};
+static const char dmenufont[] = "DejaVu Sans Mono:size=16";
+
+static const char col_gray1[] = "#282828";
+static const char col_gray2[] = "#3c3836";
+static const char col_gray3[] = "#ebdbb2";
+static const char col_gray4[] = "#282828";
+static const char col_cyan[] = "#b8bb26";
+
 static const char *colors[][3] = {
     /*               fg         bg         border   */
     [SchemeNorm] = {col_gray3, col_gray1, col_gray2},
